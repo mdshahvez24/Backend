@@ -1,0 +1,13 @@
+mvc - model view controller
+
+model == schema using mongoose
+view == ejs template files should be in root folder
+controller = controll.js
+routes == routing
+
+
+services =
+        => database -- doing database connection
+        => controller -- write all functionality
+        => routes -- define path / routing here
+        => model -- database schema which field are in our file like name conatct  email password

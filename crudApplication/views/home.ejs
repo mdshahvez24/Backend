@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1><%=data%></h1>
+
+    
+    <!-- <h1><%=data%></h1> -->
+    <h1><a href="/api/v1/add">add user</a></h1>
+
+    <% if(data !== ''){ %>
+    <table border="3" align="center" cellspacing="5" cellpadding="10">
+        <thead>
+            <tr>
+                <th>sno</th>
+                <th>name</th>
+                <th>email</th>
+                <th>mobile</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <% data.forEach((row, index)=>{ %>
+            <tr>
+                <td><%=index +1%></td>
+                <td><%=row.name%></td>
+                <td><%=row.email%></td>
+                <td><%=row.mobile%></td>
+                <td>
+                    <a href="/update">update</a> || <a href="">delete</a>
+                </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <% } else { %>
+    <h1>data not found</h1>
+    <% } %>
+</body>
+</html>
